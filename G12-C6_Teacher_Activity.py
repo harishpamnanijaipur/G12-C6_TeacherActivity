@@ -13,39 +13,29 @@ screen = pygame.display.set_mode((400,600))
 pygame.display.set_caption("Asteroid")
 background_image = pygame.image.load("bg2.jpg").convert()
 
-
 player_image = pygame.image.load("s4.png").convert_alpha()
 player=pygame.Rect(200,200,30,30)
-
-
-
 enemy=pygame.Rect(100,100,30,30)
 enemy_image = pygame.image.load("e3.png").convert_alpha()
-
 
 angle=0
 change=0
 distance=5
 forward=False
 
-
 enemycount=10
 enemies=[]
 evlx=[]
 evly=[]
 
-
 bullet=pygame.Rect(200,200,5,5)
 
 bulletState="ready"
-
 
 for i in range(1,enemycount):
   enemies.append(pygame.Rect(random.randint(0,400),random.randint(0,600),20,20))
   evlx.append(random.randint(-3,3))
   evly.append(random.randint(-3,3))
-  
-  
   
 def newxy(oldx,oldy,distance,angle):
   angle=math.radians(angle+90)
@@ -81,20 +71,12 @@ while True:
    #move the bullet,Withoud it bullet is not changeing direction
   if bulletState == "ready":
        bullet.x=player.x+20
-       bullet.y=player.y+24
-     
-       bangle=angle  
-      
-  
-  
+
   if bulletState=="fired":
       bullet.x ,bullet.y = newxy(bullet.x, bullet.y, 20 , bangle)
         
   #change bullet state back to ready when it moves out
   
-  #if bullet.x<0 or bullet.x>400:
-  if bullet.y<0 or bullet.x<0 or bullet.y>600 or bullet.x>400:
-    bulletState="ready"
   
   pygame.draw.rect(screen,(225,225,15),bullet)        
    
