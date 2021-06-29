@@ -1,0 +1,37 @@
+import pygame, sys, time
+Missed Code here
+clock = pygame.time.Clock()
+screen = pygame.display.set_mode((800,600))
+
+pygame.display.set_caption("PCQ Class 6")
+
+bg = pygame.image.load("1.jpg")
+bg2 = pygame.image.load("2.jpg")
+bg3 = pygame.image.load("3.jpg")
+black = (0, 0, 0)
+running = Missed Code here
+stage = 1
+
+while running:
+
+    screen.fill(black)
+    if stage == 1:
+        Missed Code here
+
+    elif stage==2:
+        Missed Code here
+
+    elif stage==3:    
+        screen.blit(bg3, (37, 30))        
+
+    pygame.display.update()
+
+    for event in pygame.event.get():
+
+        if event.type == pygame.QUIT:
+                
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            stage += 1
+        if event.type==pygame.KEYDOWN and event.key==pygame.K_ESCAPE:
