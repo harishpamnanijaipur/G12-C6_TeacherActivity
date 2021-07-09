@@ -71,6 +71,7 @@ while True:
    #move the bullet,Withoud it bullet is not changeing direction
   if bulletState == "ready":
        bullet.x=player.x+20
+       bullet.y=player.y+24
 
   if bulletState=="fired":
       bullet.x ,bullet.y = newxy(bullet.x, bullet.y, 20 , bangle)
